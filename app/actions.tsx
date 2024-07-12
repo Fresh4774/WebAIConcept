@@ -200,8 +200,8 @@ async function submit(
     }
 
     if (!errorOccurred) {
-      const useGoogleProvider = process.env.GOOGLE_GENERATIVE_AI_API_KEY
-      const useOllamaProvider = !!(
+      const useGoogleProvider = !!process.env.GOOGLE_GENERATIVE_AI_API_KEY
+      const useOllamaProvider = (
         process.env.OLLAMA_MODEL && process.env.OLLAMA_BASE_URL
       )
       let processedMessages = messages
